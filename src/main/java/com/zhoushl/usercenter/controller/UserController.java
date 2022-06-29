@@ -50,6 +50,7 @@ public class UserController {
         String invitationCode = userRegisterRequest.getInvitationCode();
         if(StringUtils.isAnyBlank(userAccount, userPassword, checkPassword)){
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
+
         }
         long id = userService.userRegister(userAccount, userPassword, checkPassword, invitationCode);
         return ResultUtils.success(id);
