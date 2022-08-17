@@ -1,5 +1,6 @@
 package com.zhoushl.usercenter.service;
 import java.util.Date;
+import java.util.List;
 
 import com.zhoushl.usercenter.model.domain.User;
 import org.junit.jupiter.api.Assertions;
@@ -81,5 +82,11 @@ public class UserServiceTest {
         result = userService.userRegister(userAccount, userPassword, checkPassword,invitationCode);
         Assertions.assertTrue(result == -1);
 
+    }
+
+    @Test
+    public void testQuery(){
+        List<User> zhoushl = userService.getUsers("zhoushl");
+        System.out.println(zhoushl);
     }
 }
